@@ -1,0 +1,24 @@
+<script src="node_modules/react/umd/react.development.js"></script>
+<script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<div id="app"></div>
+<script type="text/babel">
+    const List = (props) => {
+        const listItems = props.items.map((itemString) => {
+            return <h1 key={itemString}>
+            {itemString}
+            <button onClick = {()=>alert(itemString)}>+</button>
+            </h1>
+        });
+        return (
+            <div>
+                {listItems}
+            </div>
+        )
+    }
+    ReactDOM.render(
+        <List items={['React', 'Vue', 'Angular', 'Ember']} />, document.getElementById('app')
+    );
+
+</script>
